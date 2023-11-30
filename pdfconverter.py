@@ -4,11 +4,11 @@ from pdf2docx import Converter
 
 
 def convert():
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 4:
         return "Incorrect number of arguments", False
-
-    pdf_file = sys.argv[1]
-    target_docx = sys.argv[2]
+    cwd = sys.argv[1]
+    pdf_file = cwd + "/" + sys.argv[2]
+    target_docx = cwd + "/" + sys.argv[3]
 
     try:
         cv = Converter(pdf_file)
